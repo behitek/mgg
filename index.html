@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+    <style>
+        .store-offer-item a {
+          text-decoration:none;
+          color: #337ab7;
+        }
+        store-offer-item a:hover {
+          text-decoration:none;
+          color:#fe495d;
+        }
+        .section-heading {
+            font-size: 21px;
+            letter-spacing: -0.3px;
+            font-weight: 300;
+            margin-bottom: 14px;
+        }
+        @media only screen and (min-width: 1000px) {
+          .store-offer-item {
+            padding: 15px;
+            margin-bottom: 15px;
+            display:block;
+            border: 1px solid #e8f5fa;
+            margin-left: 0px;
+            margin-right: 0px;
+            max-width: 700px;
+          }
+        }
+        .store-offer-item:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+          
+        }
+        .shadow-box {
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.02);
+          background: #FFFFFF;
+        }
+        
+        @media only screen and (min-width: 1000px) {
+        .store-offer-item .store-thumb-link {
+            float: left;
+            margin-right: 10px;
+        }
+        }
+        .store-offer-item .store-thumb-link .offer-image {
+            max-width: 126px;
+            line-height: 0px;
+            margin-bottom: 5px;
+          text-align:center;
+        }
+        .offer-image a {
+          -webkit-border-radius: 2px;
+          -moz-border-radius: 2px;
+          border-radius: 2px;
+          display: block;
+        }
+        .offer-image a:hover {
+          border-color: #fe495d;
+        }
+        .offer-image img {
+            width: 80%;
+        }
+        .offer-text {
+          display:block;
+          width:100%;
+          height:100px;
+          font-size:42px;
+          line-height:36px;
+          margin:10px 0 0 0;
+          display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+          font-family: 'Passion One', cursive;
+        }
+        .store-offer-item .store-thumb-link .store-name a {
+            display: inline-block;
+            line-height: 1;
+            font-size: 13px;
+            color: #1c9ab3;
+            text-align: center;
+            width:100%;
+        }
+        .store-offer-item .store-thumb-link .store-name a:hover {
+          color:#fe495d;
+        }
+        .store-offer-item .store-thumb-link .store-name a span {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 85%;
+            display: block;
+            float: left;
+            white-space: nowrap;
+        }
+        .store-offer-item .store-thumb-link .store-name a i,
+        .des-more i{
+          font-size:9px;
+        }
+        @media only screen and (min-width: 1000px) {
+        .store-offer-item .latest-coupon {
+          max-width: 300px;
+          margin-right: 20px;
+          margin-right: 10px;
+          float: left;
+          width: 100%;
+          }
+        }
+        .latest-coupon .coupon-title {
+          font-size: 16px;
+          margin-bottom: 5px;
+          font-weight: 500;
+          margin-top: -2px;
+          line-height: 1.5;
+        }
+        .coupon-title a {
+          font-weight: 600;
+        }
+        .latest-coupon .coupon-des {
+            font-size: 13px;
+            line-height: 1.7;
+            position: relative;
+        }
+        @media only screen and (min-width: 1000px) {
+        .store-offer-item .coupon-detail {
+            float: right;
+          margin-top: 25px;
+        }
+        }
+        .coupon-button-type .coupon-deal, .coupon-button-type .coupon-print, .coupon-button-type .coupon-code {
+            line-height: 1;
+            padding: 14px 38px;
+            background: #188a16;
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 600;
+            display: inline-block;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            margin-bottom: 2px;
+            min-width: 195px;
+            text-align: center;
+        }
+        .coupon-button-type .coupon-code {
+          color: #444444;
+          background: linear-gradient(315deg, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.06) 40%, rgba(0, 0, 0, 0.06) 60%, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 0.06) 90%) repeat scroll 0 0/6px 6px rgba(0, 0, 0, 0);
+          text-align: center;
+          padding: 10px 12px;
+          font-size: 20px;
+          border: 2px solid #DDDDDD;
+          position: relative;
+        }
+        .coupon-button-type .coupon-code .code-text {
+          text-transform: uppercase;
+        }
+        .coupon-button-type .coupon-code .get-code {
+          position: absolute;
+          left: -2px;
+          top: -2px;
+          background: #188a16;
+          color: #FFFFFF;
+          font-size: 16px;
+          padding: 14px 15px 14px 24px;
+          border-top-left-radius: 2px;
+          border-bottom-left-radius: 2px;
+          transition: all 0.5s ease;
+        }
+        .coupon-button-type .coupon-code .get-code:after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 0;
+          border-top: 44px solid transparent;
+          border-left: 44px solid #188a16;
+          position: absolute;
+          right: -44px;
+          top: 0;
+        }
+        .coupon-button-type .coupon-code .get-code:hover {
+          padding-right: 5px;
+          transition: all 0.5s ease;
+        }
+        .coupon-detail .exp-text {
+            font-size: 13px;
+            display: block;
+            margin-top: 5px;
+            margin-bottom: -2px;
+            color: #888888;
+        }
+        .coupon-save {
+            float: right;
+            font-size: 15px;
+            margin-right: -4px;
+            margin-top: -2px;
+            color: #999999;
+        }
+        .glyphicon-star {
+          color: red;
+        }
+        .widget-area .widget .widget-title {
+            font-size: 13px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: 1.2px;
+            font-weight: 600;
+        }
+        .newsletter-box-wrapper.shadow-box {
+            padding: 20px;
+        }
+        a.store-gird img {
+          border:1px solid #f1f1f1;
+          display:table;
+        }
+        a.store-gird:hover img {
+          display:table;
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+        }
+        a.store-gird span {
+            margin: 5px 0 15px 0;
+            display: block;
+            text-align: center;
+            line-height:1.4;
+        }
+        /* store coupon style */
+        .coupon-listing-item {
+            padding-bottom: 0px;
+        }
+        .coupon-listing-item .offer-image img {
+            width: 100%;
+        }
+        .coupon-listing-item .c-type .c-code {
+            background: #b9dc2f;
+            color: #FFFFFF;
+            padding: 4px 10px 4px;
+            line-height: 1;
+            text-transform: uppercase;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            display: inline-block;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+        }
+        .coupon-listing-item .c-type .exp {
+            font-size: 12px;
+            color: #999999;
+            margin-left: 10px;
+        }
+        .coupon-listing-item .coupon-detail .voted-value {
+            font-size: 11px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .coupon-listing-footer {
+          margin: 18px -20px 0px;
+          padding: 10px 20px 12px;
+          border-top: 1px solid #f5f5f5;
+        }
+        .coupon-listing-footer ul {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+        .coupon-listing-footer ul li {
+            padding: 0;
+            display: inline-block;
+            float: left;
+            margin-left: 15px;
+        }
+        .ui.buttons {
+            display: inline-block;
+            vertical-align: middle;
+            margin:5px .25em 0 0;
+        }
+        .ui.basic.buttons .button {
+            border-left: 1px solid rgba(39,41,43,.15);
+            box-shadow: none;
+        }
+        .coupon-listing-item .coupon-detail .ui.basic.buttons {
+            border-radius: 2px;
+            border: 1px solid #ccc;
+        }
+        .ui.buttons:not(.basic):not(.inverted)>.button, .ui.buttons>.ui.button:not(.basic):not(.inverted) {
+            box-shadow: 0 0 0 1px transparent inset,0 0 0 0 rgba(39,41,43,.15) inset;
+        }
+        .coupon-listing-item .coupon-detail .user-ratting .ui.button {
+            padding: 5px 10px 5px;
+        }
+        .ui.buttons .button {
+            float: left;
+            border-radius: 0;
+            margin: 0;
+        }
+        .ui.buttons .button:first-child {
+            border-left: none;
+        }
+        .coupon-listing-footer ul li:first-child {
+            margin-left: 0px;
+        }
+        .coupon-listing-footer ul li a, .coupon-listing-footer ul li span {
+            font-size: 12px;
+            color: #999999;
+        }
+        .coupon-listing-footer ul li a:hover, .coupon-listing-footer ul li span:hover {
+          color:#1c9ab3;
+        }
+        .coupon-listing-footer ul li:last-child {
+            float: right;
+            margin-left: 0px;
+        }
+        .coupon-listing-footer .reveal-content {
+            padding: 30px 20px 40px;
+            border-top: 1px solid #f5f5f5;
+            margin: 12px -20px -12px;
+            display: none;
+            position: relative;
+        }
+        
+        @media only screen and (max-width: 1000px) {
+            .store-thumb-link {
+              float: none;
+            }
+            .offer-image {
+              margin: 0px auto;
+            }
+            .coupons-list {
+              text-align: center;
+            }
+            .coupon-des {
+              margin: 10px;
+            }
+            .latest-coupon{
+              padding-left: 15px;
+              padding-right: 15px;
+              margin-top: 20px;
+              margin-bottom: 20px;
+            }
+            h2 {
+              text-align: center;
+            }
+            .store-offer-item {
+              border-bottom: 1px dotted #444444;
+              padding: 20px 0px;
+              margin-left: 0px;
+              margin-right: 0px;
+            }
+            .coupon-save {
+              display: none;
+            }
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="discount-listing">
+        <h2 class="section-heading">Mã giảm giá khóa học online</h2>
+        <div class="coupons-list">
+            <!-- first coupon -->
+            <div class="store-offer-item shadow-box row">
+                <div class="store-thumb-link">
+                    <div class="offer-image">
+                        <a href=""><img src="https://nguyenvanhieu.vn/images/ltkk.png" alt="Khóa học lập trình C miễn phí 100%" title="Khóa học lập trình C miễn phí 100%"></a>
+                    </div>
+                </div>
+                <div class="latest-coupon">
+                    <h3 class="coupon-title"><a href="https://nguyenvanhieu.vn/khoa-hoc-lap-trinh-c/" target="_blank">Khóa học lập trình C miễn phí 100%</a></h3>
+                    <div class="coupon-des">
+                        Khóa học lập trình C từ cơ bản đến nâng cao đi cùng với ưu tiên thực hành qua vô vàn các bài tập lập trình đang có ưu đãi lên đến 100%
+                    </div>
+                </div>
+                <div class="coupon-detail coupon-button-type">
+                    <a href="https://nguyenvanhieu.vn/khoa-hoc-lap-trinh-c/" class="coupon-deal coupon-button">Xem ngay
+                </a>
+                    <div class="exp-text"><span class="exp-ltkk">Hết hạn trong 1 ngày nữa</span><span title="Ưu đãi đặc biệt" class="coupon-save"><i class="  glyphicon glyphicon-star"></i></span></div>
+                </div>
+            </div>
+            <!--       second coupon -->
+            <div class="store-offer-item shadow-box row">
+                <div class="store-thumb-link">
+                    <div class="offer-image">
+                        <a href=""><img src="https://nguyenvanhieu.vn/images/unica.png" alt="Giảm giá tối thiểu 40% các khóa học lập trình"  title="Giảm giá tối thiểu 40% các khóa học lập trình"></a>
+                    </div>
+                </div>
+                <div class="latest-coupon">
+                    <h3 class="coupon-title"><a href="http://bit.ly/2R71S9i" target="_blank">Giảm giá ít nhất 40% khóa học lập trình</a></h3>
+                    <div class="coupon-des">
+                        Mã giảm giá ít nhất 40% cho mọi khóa học lập trình Online tại Unica, giảm thêm 10% khi thanh toán online
+                    </div>
+                </div>
+                <div class="coupon-detail coupon-button-type">
+                    <a href="" class="coupon-button coupon-code" data-aff-url="http://bit.ly/2R71S9i">
+                <span class="code-text">LTKK</span>
+                <span class="get-code" onclick="s=prompt('Copy mã bên dưới để sử dụng. Sau khi copy, hệ thống sẽ chuyển bạn đến trang khuyến mãi dùng được mã này','LTKK'); window.open('http://bit.ly/2R71S9i');">Lấy mã</span>
+            </a>
+                    <div class="exp-text"><span class="exp-unica">Hết hạn trong 1 ngày nữa</span><span title="Ưu đãi đặc biệt" class="coupon-save"><i class=" glyphicon glyphicon-star"></i></span></div>
+                </div>
+            </div>
+            <!--       third coupon active deal -->
+            <div class="store-offer-item shadow-box row">
+                <div class="store-thumb-link">
+                    <div class="offer-image">
+                        <a href="">
+                <img src="https://nguyenvanhieu.vn/images/thdh.png"></a>
+                    </div>
+
+                </div>
+                <div class="latest-coupon">
+                    <h3 class="coupon-title"><a href="#">Giảm giá 50% khóa học Photoshop, AI</a></h3>
+                    <div class="coupon-des">
+                        Mã giảm giá 50% có hạn dành cho các khóa học đồ họa của giảng viên Trịnh Đức Dương tại Unica
+                    </div>
+                </div>
+                <div class="coupon-detail coupon-button-type">
+                    <a href="" class="coupon-button coupon-code" data-aff-url="http://bit.ly/2R71S9i">
+                    <span class="code-text">TRINHNHANKIET</span>
+                    <span class="get-code" onclick="s=prompt('Copy mã bên dưới để sử dụng. Sau khi copy, hệ thống sẽ chuyển bạn đến trang khuyến mãi dùng được mã này','TRINHNHANKIET'); window.open('http://bit.ly/2R71S9i');">Lấy mã</span>
+                </a>
+                    <div class="exp-text"><span class="exp-thdh">Hết hạn trong 1 ngày nữa</span><span title="Ưu đãi đặc biệt" class="coupon-save"><i class="  glyphicon glyphicon-star"></i></span></div>
+                </div>
+            </div>
+            <!-- fourth coupon -->
+            <div class="store-offer-item shadow-box row">
+                <div class="store-thumb-link">
+                    <div class="offer-image">
+                        <a href=""><img src="https://nguyenvanhieu.vn/images/luyencode.png" alt="Luyện tập với 500+ bài tập lập trình miễn phí" title="Luyện tập với 500+ bài tập lập trình miễn phí"></a>
+                    </div>
+                </div>
+                <div class="latest-coupon">
+                    <h3 class="coupon-title"><a href="https://luyencode.net" target="_blank">Luyện tập với 500+ bài tập lập trình miễn phí</a></h3>
+                    <div class="coupon-des">
+                        Luyện Code Online là website thực hành lập trình trực tuyến miễn phí với vô vàn bài tập ở đa dạng thể loại khác nhau.
+                    </div>
+                </div>
+                <div class="coupon-detail coupon-button-type">
+                    <a href="https://luyencode.net/" class="coupon-deal coupon-button">Xem ngay
+            </a>
+                    <div class="exp-text"><span class="exp-luyencode">Hạn sử dụng: <span style="color: #000;font-weight: bold;">Unlimited</span></span><span title="Ưu đãi đặc biệt" class="coupon-save"><i class=" glyphicon glyphicon-star"></i></span></div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-heading">Mã giảm giá Hosting & VPS</h2>
+        <!-- Vultr -->
+        <div class="store-offer-item shadow-box row">
+            <div class="store-thumb-link">
+                <div class="offer-image">
+                    <a href=""><img src="https://nguyenvanhieu.vn/images/vultr.png" alt="Nhận 100$ ưu đãi trải nghiệm VPS tại Vultr"  title="Nhận 100$ ưu đãi trải nghiệm VPS tại Vultr"></a>
+                </div>
+            </div>
+            <div class="latest-coupon">
+                <h3 class="coupon-title"><a href="http://bit.ly/3h6bq2q" target="_blank">Nhận 100$ dùng thử VPS tại Vultr</a></h3>
+                <div class="coupon-des">
+                    Nhận miễn phí 100$ dùng thử dịch vụ VPS tại Vultr cho khách hàng lần đầu đăng ký sử dụng (yêu cầu nhập thông tin thanh toán)
+                </div>
+            </div>
+            <div class="coupon-detail coupon-button-type">
+                <a href="" class="coupon-button coupon-code" data-aff-url="http://bit.ly/3h6bq2q">
+                <span class="code-text">8403170-6G</span>
+                <span class="get-code" onclick="s=prompt('Copy mã bên dưới để sử dụng. Sau khi copy, hệ thống sẽ chuyển bạn đến trang khuyến mãi dùng được mã này','8403170-6G'); window.open('http://bit.ly/3h6bq2q');">Lấy mã</span>
+            </a>
+                <div class="exp-text"><span class="exp-vultr">Hết hạn trong 2 ngày nữa</span><span title="Ưu đãi đặc biệt" class="coupon-save"><i class=" glyphicon glyphicon-star"></i></span></div>
+            </div>
+        </div>
+        <!-- Tino -->
+        <div class="store-offer-item shadow-box row">
+            <div class="store-thumb-link">
+                <div class="offer-image">
+                    <a href=""><img src="https://nguyenvanhieu.vn/images/tino.png" alt="Giảm giá 10% các dịch vụ Hosting & VPS tại TinoHost"  title="Giảm giá 10% các dịch vụ Hosting & VPS tại TinoHost"></a>
+                </div>
+            </div>
+            <div class="latest-coupon">
+                <h3 class="coupon-title"><a href="http://bit.ly/2KcJpub" target="_blank">Giảm 10% các gói Hosting & VPS tại TinoHost</a></h3>
+                <div class="coupon-des">
+                    Giảm giá trực tiếp 10% trên hóa đơn thanh toán cho các gói dịch vụ Hosting & VPS dành cho khách hàng lần đầu sử dụng
+                </div>
+            </div>
+            <div class="coupon-detail coupon-button-type">
+                <a href="" class="coupon-button coupon-code" data-aff-url="http://bit.ly/2KcJpub">
+                <span class="code-text">LTKK</span>
+                <span class="get-code" onclick="s=prompt('Copy mã bên dưới để sử dụng. Sau khi copy, hệ thống sẽ chuyển bạn đến trang khuyến mãi dùng được mã này','LTKK'); window.open('http://bit.ly/2KcJpub');">Lấy mã</span>
+            </a>
+                <div class="exp-text"><span class="exp-tino">Hết hạn trong 2 ngày nữa</span><span title="Ưu đãi đặc biệt" class="coupon-save"><i class="  glyphicon glyphicon-star"></i></span></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function randomDate(days) {
+    var today = new Date();
+    today.setDate(today.getDate()+days);
+    var dd = today.getDate(); 
+    var mm = today.getMonth() + 1; 
+    var yyyy = today.getFullYear(); 
+    if (dd < 10) { 
+        dd = '0' + dd; 
+    } 
+    if (mm < 10) { 
+        mm = '0' + mm; 
+    } 
+    return dd + '/' + mm + '/' + yyyy; 
+}
+
+document.getElementsByClassName("exp-ltkk")[0].innerHTML = "Hạn sử dụng: <span style='font-weight: bold;color:#000;'>" + randomDate(2) + "</span>";
+document.getElementsByClassName("exp-unica")[0].innerHTML = "Hạn sử dụng: <span style='font-weight: bold;color:#000;'>" + randomDate(7) + "</span>";
+document.getElementsByClassName("exp-thdh")[0].innerHTML = "Hạn sử dụng: <span style='font-weight: bold;color:#000;'>" + randomDate(1) + "</span>";
+document.getElementsByClassName("exp-luyencode")[0].innerHTML = "Hạn sử dụng: <span style='font-weight: bold;color:#000;'>Unlimited</span>";
+document.getElementsByClassName("exp-vultr")[0].innerHTML = "Hạn sử dụng: <span style='font-weight: bold;color:#000;'>" + randomDate(1) + "</span>";
+document.getElementsByClassName("exp-tino")[0].innerHTML = "Hạn sử dụng: <span style='font-weight: bold;color:#000;'>" + randomDate(5) + "</span>";
+    </script>
+</body>
+
+</html>
