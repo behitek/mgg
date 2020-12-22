@@ -58,12 +58,10 @@ function create_shortcode_coupon($args){
 	    }
 	    for(let x of document.getElementsByClassName("code-text")){
           let code = x.innerText
-          console.log(code);
           x.innerText = code.substr(code.length - 8);
         }
         for(let x of document.getElementsByClassName("expire-date-value")){
           if (/^[0-9]+$/.test(x.innerText)) {
-          	console.log(x);
             let days = parseInt(x.innerText);
             x.innerText = randomDate(days);
           }
