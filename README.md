@@ -20,13 +20,19 @@ Có 2 loại: mã giảm giá (có mã) & ưu đãi (truy cập tới link đíc
   content="Khóa học lập trình C từ cơ bản đến nâng cao đi cùng với ưu tiên thực hành qua vô vàn các bài tập lập trình đang có ưu đãi lên đến 100%" 
   expire="5"]
 ```
+
 Kết quả:
+
 ![](https://i.imgur.com/dJSxfCB.png)
+
 Khi nhấp vào **Lấy mã**:
+
 ![](https://i.imgur.com/IvBa5Et.png)
 
 ## Ưu đãi
+
 - Giống như **Mã giảm giá**, chỉ cần bỏ đi trường `code` là ok!
 
 Kết quả:
+
 ![](https://i.imgur.com/7TOU14L.png)
