@@ -12,9 +12,11 @@ Có 2 loại: mã giảm giá (có mã) & ưu đãi (truy cập tới link đíc
 - content: mô tả thông tin MGG
 - expire: điền ngày hết hạn, hoặc điền một giá trị `x` bất kỳ, hạn sử dụng sẽ hiển thị là thời điểm người dùng xem cộng thêm `x` ngày.
 
+**Lưu ý:** Khi chèn vào bài viết thì để trên 1 dòng (dưới đây mình ngắt các dòng cho dễ nhìn
 ```php
 [sc_coupon 
-  logo="https://nguyenvanhieu.vn/images/ltkk.png" code="LTKK" 
+  logo="https://nguyenvanhieu.vn/images/ltkk.png" 
+  code="LTKK" 
   title="Khóa học lập trình C miễn phí 100%" 
   url="https://nguyenvanhieu.vn/khoa-hoc-lap-trinh-c/"  
   content="Khóa học lập trình C từ cơ bản đến nâng cao đi cùng với ưu tiên thực hành qua vô vàn các bài tập lập trình đang có ưu đãi lên đến 100%" 
