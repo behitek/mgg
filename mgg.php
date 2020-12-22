@@ -1,14 +1,14 @@
 <?php
 
-/**
-* Plugin name: MGG
-* Plugin URL: https://nguyenvanhieu.vn
-* Description: Tạo mã giảm giá hoặc ưu đãi dễ dàng, linh hoạt với việc linh hoạt thời gian hết hạn
-* Version: 1.0
-* Author: Hieu Nguyen Van
-* Author URL: https://nguyenvanhieu.vn
-* License: GPLv2 or later
-**/
+/*
+Plugin Name: Mã Giảm Giá
+Description: Tạo mã giảm giá hoặc ưu đãi dễ dàng, linh hoạt với việc linh hoạt thời gian hết hạn
+Author: nguyenvanhieuvn
+Author URI: https://nguyenvanhieu.vn
+Version: 1.0.0
+Text Domain: ma-giam-gia
+License: GPLv2 or later
+*/
 
 function create_shortcode_coupon($args){
 	ob_start(); ?>
