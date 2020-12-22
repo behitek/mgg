@@ -12,7 +12,7 @@ Có 2 loại: mã giảm giá (có mã) & ưu đãi (truy cập tới link đíc
 - content: mô tả thông tin MGG
 - expire: điền ngày hết hạn, hoặc điền một giá trị `x` bất kỳ, hạn sử dụng sẽ hiển thị là thời điểm người dùng xem cộng thêm `x` ngày.
 
-**Lưu ý:** Khi chèn vào bài viết thì để trên 1 dòng (dưới đây mình ngắt các dòng cho dễ nhìn
+**Lưu ý:** _Khi chèn vào bài viết thì để trên 1 dòng (dưới đây mình ngắt các dòng cho dễ nhìn) ^^_
 ```php
 [sc_coupon 
   logo="https://nguyenvanhieu.vn/images/ltkk.png" 
