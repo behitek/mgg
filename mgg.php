@@ -43,11 +43,11 @@ function create_shortcode_coupon($args){
 	</style>
 	<script>
 		function randomDate(days) {
-	      var today = new Date();
+	      let today = new Date();
 	      today.setDate(today.getDate()+days);
-	      var dd = today.getDate(); 
-	      var mm = today.getMonth() + 1; 
-	      var yyyy = today.getFullYear(); 
+	      let dd = today.getDate(); 
+	      let mm = today.getMonth() + 1; 
+	      let yyyy = today.getFullYear(); 
 	      if (dd < 10) { 
 	          dd = '0' + dd; 
 	      } 
@@ -58,12 +58,13 @@ function create_shortcode_coupon($args){
 	    }
 	    for(let x of document.getElementsByClassName("code-text")){
           let code = x.innerText
+          console.log(code);
           x.innerText = code.substr(code.length - 8);
         }
         for(let x of document.getElementsByClassName("expire-date-value")){
-          if (/[0-9]+/.test(x.innerText)) {
+          if (/^[0-9]+$/.test(x.innerText)) {
+          	console.log(x);
             let days = parseInt(x.innerText);
-            console.log(days);
             x.innerText = randomDate(days);
           }
         }
