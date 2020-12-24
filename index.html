@@ -500,26 +500,29 @@
 
     <script>
         function randomDate(days) {
-    var today = new Date();
-    today.setDate(today.getDate()+days);
-    var dd = today.getDate(); 
-    var mm = today.getMonth() + 1; 
-    var yyyy = today.getFullYear(); 
-    if (dd < 10) { 
-        dd = '0' + dd; 
-    } 
-    if (mm < 10) { 
-        mm = '0' + mm; 
-    } 
-    return dd + '/' + mm + '/' + yyyy; 
-}
-
-document.getElementsByClassName("exp-ltkk")[0].innerHTML = "Hạn sử dụng: <span style='font-weight: bold;color:#000;'>" + randomDate(2) + "</span>";
-document.getElementsByClassName("exp-unica")[0].innerHTML = "Hạn sử dụng: <span style='font-weight: bold;color:#000;'>" + randomDate(7) + "</span>";
-document.getElementsByClassName("exp-thdh")[0].innerHTML = "Hạn sử dụng: <span style='font-weight: bold;color:#000;'>" + randomDate(1) + "</span>";
-document.getElementsByClassName("exp-luyencode")[0].innerHTML = "Hạn sử dụng: <span style='font-weight: bold;color:#000;'>Unlimited</span>";
-document.getElementsByClassName("exp-vultr")[0].innerHTML = "Hạn sử dụng: <span style='font-weight: bold;color:#000;'>" + randomDate(1) + "</span>";
-document.getElementsByClassName("exp-tino")[0].innerHTML = "Hạn sử dụng: <span style='font-weight: bold;color:#000;'>" + randomDate(5) + "</span>";
+	      let today = new Date();
+	      today.setDate(today.getDate()+days);
+	      let dd = today.getDate(); 
+	      let mm = today.getMonth() + 1; 
+	      let yyyy = today.getFullYear(); 
+	      if (dd < 10) { 
+	          dd = '0' + dd; 
+	      } 
+	      if (mm < 10) { 
+	          mm = '0' + mm; 
+	      } 
+	      return dd + '/' + mm + '/' + yyyy; 
+	    }
+	    for(let x of document.getElementsByClassName("code-text")){
+          let code = x.innerText
+          x.innerText = code.substr(code.length - 8);
+        }
+        for(let x of document.getElementsByClassName("expire-date-value")){
+          if (/^[0-9]+$/.test(x.innerText)) {
+            let days = parseInt(x.innerText);
+            x.innerText = randomDate(days);
+          }
+        }
     </script>
 </body>
 
