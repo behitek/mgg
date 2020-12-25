@@ -19,7 +19,7 @@ function create_shortcode_coupon($args){
           </div>
       </div>
       <div class="latest-coupon">
-          <h3 class="coupon-title"><a href="<?php echo $args['url']; ?>" target="_blank"><?php echo $args['title']; ?></a></h3>
+          <p class="coupon-title"><a href="<?php echo $args['url']; ?>" target="_blank"><?php echo $args['title']; ?></a></p>
           <div class="coupon-des">
               <?php echo $args['content']; ?>
           </div>
