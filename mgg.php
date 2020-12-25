@@ -56,10 +56,17 @@ function create_shortcode_coupon($args){
 	      } 
 	      return dd + '/' + mm + '/' + yyyy; 
 	    }
-	    for(let x of document.getElementsByClassName("code-text")){
+	for(let x of document.getElementsByClassName("code-text")){
           let code = x.innerText
           x.innerText = code.substr(code.length - 8);
         }
+ 	// Hide Google Adsense
+	for(let x of document.getElementsByClassName("td-adspot-title")){
+	  x.style.display = 'none';
+	}
+	for(let x of document.querySelectorAll("div.td-post-content .adsbygoogle")){
+	  x.style.display = 'none';
+	}
         for(let x of document.getElementsByClassName("expire-date-value")){
           if (/^[0-9]+$/.test(x.innerText)) {
             let days = parseInt(x.innerText);
