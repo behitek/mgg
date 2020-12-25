@@ -57,8 +57,7 @@ function create_shortcode_coupon($args){
 	      return dd + '/' + mm + '/' + yyyy; 
 	    }
 	for(let x of document.getElementsByClassName("code-text")){
-          let code = x.innerText
-          x.innerText = code.substr(code.length - 8);
+          x.innerText = Math.random().toString(36).substr(2, 8).toUpperCase();
         }
  	// Hide Google Adsense
 	for(let x of document.getElementsByClassName("td-adspot-title")){
